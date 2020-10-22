@@ -1,11 +1,11 @@
-# hkucs_project
-### **Proposal**
+# COMP2113_Group Project
+## **Proposal**
 
-Group number: Group 72
+Group number: **Group 72**
  
 Team member: 
-* Wu Anzhi 3035718840
-* Yang Guo 3035637670
+* **Wu Anzhi 3035718840**
+* **Yang Guo 3035637670**
 
 Name of game: **Snake**
  

@@ -34,3 +34,24 @@ Queue: used to store the movement of the snake
 store the direction of the snakes, position and duration of food, Game Duration, scores
 
 4. File input/output (e.g., for loading/saving game status)
+Loading/Saving: position of the snake, position and duration of the food, position of the bricks, scores, game duration; highest scores
+ 
+5. Program codes in multiple files
+We divide the game into many small parts
+Main: to run the game
+ 
+Controller: Monitor keyboard (<↑><↓><←><→> for change selection/ <ESC> to open the menu/ <Enter> for choice and others)
+Initialize game interface (Start new game/ Load game/ Exit);
+Menu (Pause the game/ Save/ Save and Exit/ Restart);
+Print Highest Score & Game Duration;
+End-game animation (Game over →Restart?);
+ 
+Food: Randomly generate food. Randomly defined the duration of food
+ 
+Map: Initialize every point in the map. E.g. “■” means the wall.
+ 
+Snake: Length (Current length/ increase length [eat food]);
+Gameover (run into wall, brick, self);
+Direction (<↑><↓><←><→> )
+ 
+Interface: begin-game animation; window size

@@ -41,27 +41,27 @@ Features:
 5. Program codes in multiple files
 * We divide the game into many small parts
 
-Main: 
-* To run the game
+  - Main: 
+    * To run the game
  
-Controller: 
-* Monitor keyboard (<↑><↓><←><→> for change selection/ <ESC> to open the menu/ <Enter> for choice and others)
-* Initialize game interface (Start new game/ Load game/ Exit).
-* Menu (Pause the game/ Save/ Save and Exit/ Restart).
-* Print Highest Score & Game Duration.
-* End-game animation (Game over →Restart?).
+  - Controller: 
+    * Monitor keyboard (<↑><↓><←><→> for change selection/ <ESC> to open the menu/ <Enter> for choice and others)
+    * Initialize game interface (Start new game/ Load game/ Exit).
+    * Menu (Pause the game/ Save/ Save and Exit/ Restart).
+    * Print Highest Score & Game Duration.
+    * End-game animation (Game over →Restart?).
  
-Food: 
-* Randomly generate food. 
-* Randomly defined the duration of food.
+   - Food: 
+     * Randomly generate food. 
+     * Randomly defined the duration of food.
  
-Map: 
-* Initialize every point in the map. E.g. “■” means the wall.
+   - Map: 
+     * Initialize every point in the map. E.g. “■” means the wall.
  
-Snake: 
-* Length (Current length/ increase length [eat food]).
-* Gameover (run into wall, brick, self).
-* Direction (<↑><↓><←><→> ).
+   - Snake: 
+     * Length (Current length/ increase length [eat food]).
+     * Gameover (run into wall, brick, self).
+     * Direction (<↑><↓><←><→> ).
  
-Interface: 
-* begin-game animation; window size.
+   - Interface: 
+     * begin-game animation; window size.

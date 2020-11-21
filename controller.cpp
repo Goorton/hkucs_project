@@ -24,7 +24,7 @@ int menuselect()
 		ch = getch();
 		switch (ch)
 		{
-		case 'w': //Arrow key: up
+		case 'w': //pointer goes up
 			if (key == 2) {
 				coutclear(33, 13);
 				refresh();
@@ -35,7 +35,7 @@ int menuselect()
 			}
 			break;
 
-		case 's': //Arrow key: down
+		case 's': //pointer goes down
 			if (key == 1) {
 				coutclear(33, 10);
 				refresh();
@@ -46,7 +46,7 @@ int menuselect()
 			}
 			break;
 
-		case 'y': //enter
+		case 'y': //make choice
 			ifenter = true;
 			break;
 		}
@@ -72,7 +72,7 @@ int gamemenuselect() {
 		ch = getch();
 		switch (ch)
 		{
-		case 'w': //Arrow key: up
+		case 'w': //pointer goes up
 			if (gkey > 1) {
 				switch (gkey)
 				{
@@ -94,7 +94,7 @@ int gamemenuselect() {
 			}
 			break;
 
-		case 's': //Arrow key: down
+		case 's': //pointer goes down
 			if (gkey < 3) {
 				switch (gkey)
 				{
@@ -116,7 +116,7 @@ int gamemenuselect() {
 			}
 			break;
 
-		case 'y': //enter
+		case 'y': //make choice
 			ifenter = true;
 			coutclear(33, 10);
 			coutclear(33, 13);

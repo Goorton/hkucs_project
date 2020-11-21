@@ -4,29 +4,29 @@
 Group number: **Group 72**
  
 Team member: 
-* **Wu Anzhi 3035718840**
-* **Yang Guo 3035637670**
+**Wu Anzhi 3035718840**
+**Yang Guo 3035637670**
 
 Name of game: **Snake**
  
 Game description:
-* Snake is a game where players can manipulate a line in a limited area. 
-* The line can move in four directions and touch the target objects to get longer. 
-* The longer the line, the higher grades the player can get. 
-* If the line hit the edges, itself or the bricks, game over.
+* This is a console program.
+* **Snake** is a game where players can manipulate a "snake" (consisting of strings) in "map" (a limited area). 
+* The "snake" can move in four directions and get "food" to get longer. 
+* The longer the "snake", the higher scores the player can get. 
+* If the "snake" hit the edges, itself or the bricks, game over.
  
 Basic rules:
 * A closed space surrounded by four walls
-* The line can move in four directions -- upward, downward, rightward, leftward
-* The line can become longer if its head touches the target points
-* The target points will appear randomly and last for a limited time before disappearance
-* The line can only move within the closed area
-* If head of the line hit the walls, its body or bricks, game over.
+* The "snake" can move in four directions -- upward, downward, rightward, leftward.
+* The "snake" can become longer if its head touches "food" (the target points).
+* The "food" will appear randomly.
+* The "snake" can only move within "map".
+* If head of the "snake" hit the walls, its body or bricks, game over.
  
 Features:
 1. Generation of random game sets or events
 * The target points appear randomly
-* The target points have random duration
 * The bricks appear randomly
 
 2. Data structures for storing game status

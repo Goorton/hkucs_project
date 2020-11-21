@@ -98,8 +98,10 @@ Non-standard Libraries:
    
    
 Compilation and execution instructions:
-  1. Put all all files (4 ".h" files, 5 ".cpp" files, 3 ".txt" files, 1 "Makefile") under the same directory.
-  2. Check if installed <curses.h> or not: if not, git clone a new one in this directory. if yes: substitute the header line #include "./include/ncursestw/curses.h" with #include <curses.h>, and then modify the "Makefile", delete "-I ~/snake/include -I ~/snake/ncursestw -L ~/snake/lib" in FLAGS.
+  1. Put all files (4 ".h" files, 5 ".cpp" files, 3 ".txt" files, 1 "Makefile") under the same directory.
+  2. Check if installed <curses.h> or not: 
+      if not, git clone a new one in this directory. 
+      if yes: substitute the header line #include "./include/ncursestw/curses.h" with #include <curses.h>, and then modify the "Makefile", delete "-I ~/snake/include -I ~/snake/ncursestw -L ~/snake/lib" in FLAGS.
      Note: in order to run this game in standard course server, we always need to install a curses.h library to compile. Then there is no need to modify anything.
   3. Run "$ make main" to compile.
   4. Run "$ ./main" to execute the game.

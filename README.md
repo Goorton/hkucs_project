@@ -26,61 +26,64 @@ Basic rules:
  
 Features:
 1. Generation of random game sets or events
-* The target points appear randomly
-* The bricks appear randomly
+* The "food" appears randomly.
+* Generate random bricks for every game. 
 
 2. Data structures for storing game status
 * Array: used to store 
-  - the basic length of the snake
   - positions of walls
   - random bricks
-  - the direction of the snakes
-  - position and duration of food
-  - Game Duration
-  - scores
-* Queue: used to store 
-  - the movement of the snake
+  - position of "food"
+* Linked list: used to store 
+  - the body of the "snake"
  
 3. Dynamic memory management
-* store: 
-  - direction of the snakes
-  - position and duration of food
-  - Game Duration
-  - scores
+  - use pointer and address to locate every body of the "snake"
+  - keyboard listener
 
 4. File input/output (e.g., for loading/saving game status)
 * Loading/Saving: 
-  - position of the snake
-  - position and duration of the food
-  - position of the bricks, scores
-  - game duration
+  - position of the "snake"
+  - position of the "food"
+  - type of the map
   - highest scores
  
 5. Program codes in multiple files
 * We divide the game into many small parts
 
-  - Main: 
-    * To run the game
+  - main.cpp: 
+    * Initialize screen, type of the map
+    * Declare necessary parameter
+    * Game Level One Loop & Level Two Loop
+    * Perform I/O interaction
+    * React to decision (return value come from <controller>)
  
-  - Controller: 
-    * Monitor keyboard (<↑><↓><←><→> for change selection/ <ESC> to open the menu/ <Enter> for choice and others)
-    * Initialize game interface (Start new game/ Load game/ Exit)
-    * Menu (Pause the game/ Save/ Save and Exit/ Restart)
-    * Print Highest Score & Game Duration
-    * End-game animation (Game over →Restart?)
+  - controller.cpp & controller.h: 
+    * Monitor keyboard
+    * Perform selection
+    
+  - map.cpp & map.h: 
+    * Initialize map and bricks
+    * Initialize basic menu (Start new game/ Load game/ Exit)
+    * Initialize gamemenu (Continue/ restart/ save)
+    * Gameover interface
  
-   - Food: 
-     * Randomly generate food
-     * Randomly defined the duration of food
+  - snake.cpp & snake.h: 
+    * Build up snake body (Linked lists)
+    * Perform Movement
+    * Monitor keyboard and decide the direction of movement
+    * Randomly generate food
+    * Judge if snake dead
+    * Judge if snake get food, and perform "get longer"
+    * Perform I/O operation: save & load snake body position
  
-   - Map: 
-     * Initialize every point in the map. E.g. “■” means the wall
- 
-   - Snake: 
-     * Length (Current length/ increase length [eat food])
-     * Gameover (run into wall, brick, self)
-     * Direction (<↑><↓><←><→> )
- 
-   - Interface: 
-     * begin-game animation
-     * window size
+  - screen.cpp & screen.h: 
+    * Perform screen output at desired position
+    * Output elements conveniently
+
+
+**----------------------------------------------------------------------------------------------------------------**
+**----------------------------------------------------------------------------------------------------------------**
+**----------------------------------------------------------------------------------------------------------------**
+
+Implementation:

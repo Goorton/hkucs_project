@@ -24,7 +24,6 @@ void snake::initializesnake() {
 	refresh();
 	coutcircle(2, 15);
 	refresh();
-	//setcursor(30, 31);
 	score = 0;//Initialize score.
 }
 
@@ -61,7 +60,7 @@ void snake::movesnake() {
 		m->y = head->y;
 		break;
 	}
-	head = m;//add a new node to be the head.
+	head = m;//add a new node and let it be the head.
 
 
 
@@ -83,7 +82,6 @@ void snake::movesnake() {
 	}
 	coutcircle(current->x, current->y);
 	refresh();
-	//setcursor(head->x, head->y);
 }
 
 //This function is used to determine if the snake is dead or not.
@@ -144,6 +142,8 @@ bool snake::death(int r) {
 	return false;
 }
 
+//This function is used to keep listening keyboard while do not stop snake's movement
+//Use man select to choose one: no input in buffer within 80000 ns: continue execution; else: return the input. 
 int mygetch(){
 	fd_set rfds;
 	struct timeval tv;
@@ -170,10 +170,10 @@ int mygetch(){
 	return ch;
 }
 //This function is used to decide if the snake has changed its position.
-//Also the return value can help find if the user has pressed <ESC>.
+//Also the return value can help find if the user has pressed 'q'.
 bool snake::changedirection(){
 	char ch;
-	ch = mygetch();//if we get the first return value, then decide the second one.
+	ch = mygetch();//if we get return value, then decide what it is.
 	switch (ch)
 	{
 	case 'w':
@@ -202,7 +202,7 @@ bool snake::changedirection(){
 			break;
 
 
-	case 'q'://If user pressed key: <ESC>, then return false.
+	case 'q'://If user pressed key: 'q', then return false.
 			return false;
 
 		default:

@@ -15,8 +15,9 @@ using namespace std;
 //** We decide two while circle to implement the function **
 
 int main(){
-	//Set terminal.
-	//Declare m, s.
+	//Set terminal
+	//Declare m, s
+	//Initialize screen
 	initscr();
 	cbreak();
 	noecho();
@@ -26,10 +27,12 @@ int main(){
 	int r;
 	int command;
 	int rerun;
-
+	
+	//Declare stream object
 	ofstream fout;
 	ifstream fin;
-
+	
+	//Level one loop: not break, always in the game.
 	while (true) { //Keep doing the following instruction until the terminal is closed.
 		rerun = 0;
 		srand(time(NULL));
@@ -40,6 +43,8 @@ int main(){
 		if (menuselect() == 2) {   //return 2 means to load a game.
 			setcursor(36, 18, "Loading Error!!!!");
 			refresh();
+			
+			//Load map type r.
 			fin.open("foodwall.txt");
 			if (fin.fail()) {
 				setcursor(36, 18, "Loading Error!!!!");
@@ -49,7 +54,8 @@ int main(){
 				fin >> r;//Load a seed.
 			}
 			fin.close();
-
+			
+			//After loading a game, refresh the screen and load a new map.
 			clear();
 			refresh();
 			erase();
@@ -63,26 +69,28 @@ int main(){
 
 		}
 		else {
+			//Start a new game, only needs to initialize snake and food.
 			s.initializesnake();
 			s.food(r);
 		}
 
-
+		//Level two loop: if the snake dies or choose to restart, break.
 		while (s.death(r) != true) {
 			if (s.changedirection() != true) {
 				m.gamemenu();
 				if (command = gamemenuselect()) {
 					switch (command)
 					{
-					case 1:
+					case 1://Continue
 						m.initializemenu();
 						break;
-					case 2:
+					case 2://restart
 						rerun = 1;
 						break;
-					case 3:
+					case 3://save
 						s.save();
-
+						
+						//save the map type.
 						fout.open("foodwall.txt");
 						if (fout.fail()) {
 							setcursor(36, 18, "Error: Not Saved!");
@@ -102,12 +110,13 @@ int main(){
 			if (rerun == 1) {
 				break;
 			}
+			//eat food or not.
 			if (s.eatfood()) {
 				s.longer();
 				s.food(r);
 			}
 			s.movesnake();
-			usleep(135000);
+			usleep(135000);//The speed the snake moves.
 		}
 
 		//if choose "restart", then no gameover interface.
@@ -118,7 +127,7 @@ int main(){
 		}
 
 	}
-
+	//exit curses mode
 	endwin();
 	return 0;
 }

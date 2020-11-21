@@ -14,25 +14,25 @@ void setcursor(const int x, const int y, const char* a) {
 	refresh();
 }
 
-//set console cursor to a point and print out "��", which means wall in our game.
+//set console cursor to a point and print out "##", which means wall in our game.
 void coutsquare(const int x, const int y) {
 	mvaddstr(y, x*2, "##");
 	refresh();
 }
 
-//set console cursor to a point and print out "��", which means snake body in our game.
+//set console cursor to a point and print out "::", which means snake body in our game.
 void coutcircle(const int x, const int y) {
 	mvaddstr(y, x*2, "::");
 	refresh();
 }
 
-//set console cursor to a point and print out "��", which is a pointer in our game.
+//set console cursor to a point and print out "->", which is a pointer in our game.
 void coutpointer(const int x, const int y) {
 	mvaddstr(y, x*2, "->");
 	refresh();
 }
 
-//set console cursor to a point and print out "��", which means food in our game.
+//set console cursor to a point and print out "@@", which means food in our game.
 void coutfood(const int x, const int y) {
 	mvaddstr(y, x*2, "@@");
 	refresh();

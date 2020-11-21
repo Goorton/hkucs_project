@@ -72,7 +72,10 @@ Basic rules:
   - snake.cpp & snake.h: 
     * Build up snake body (Linked lists)
     * Perform Movement
-    * Monitor keyboard and decide the direction of movement
+    * Monitor keyboard and decide the direction of movement：
+        - it is worth noting that we implemented this function using non-blocking selection.
+        - under linux environment, we have no function like kbhit(), which can decide if there is a keyboard input. Then if we want to keep monitoring the keyboard      while let the snake move as usual, we need to do selection in a very short period (80000ns in our program): if there is no input in buffer, then the snake keeps on       moving, else: change the snake's direction.
+        
     * Randomly generate food
     * Judge if snake dead
     * Judge if snake get food, and perform "get longer"

@@ -78,7 +78,7 @@ Basic rules:
     * Judge if snake get food, and perform "get longer"
     * Perform I/O operation: save & load snake body position
  
-  - snake.cpp & snake.h: 
+  - screen.cpp & screen.h: 
     * Perform screen output at desired position
     * Output elements conveniently
 

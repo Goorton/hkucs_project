@@ -57,7 +57,7 @@ Basic rules:
     * Declare necessary parameter
     * Game Level One Loop & Level Two Loop
     * Perform I/O interaction
-    * React to decision (return value come from <controller>)
+    * React to decision (return value come from "controller")
  
   - controller.cpp & controller.h: 
     * Monitor keyboard
